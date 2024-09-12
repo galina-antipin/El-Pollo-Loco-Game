@@ -1,0 +1,362 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./img/desert.png');
+    background-position: top;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    font-size: 32px;
+    background-color: #f6ad4e;
+}
+
+@font-face {
+    font-family: 'zabars';
+    src: URL('./fonts/zabars.ttf') format('truetype');
+}
+
+#content-wrapper {
+    position: relative !important;
+    height: 480px;
+    width: 720px;
+    max-width: 1920px;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.opacity-none {
+    opacity: 0;
+}
+
+/* mute and home btn overlay*/
+.btn-overlay {
+    display: flex;
+    align-items: center;
+}
+
+.btn-overlay img:hover {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(632%) hue-rotate(353deg) brightness(74%) contrast(88%);
+}
+
+#mute-btn {
+    height: 25px;
+    width: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#home-btn {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+/* Start Screen CSS*/
+.start-screen {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/9_intro_outro_screens/start/startscreen_1.png');
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 30;
+    pointer-events: auto;
+}
+
+.impressum,
+.instructions {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    color: #641e0b;
+}
+
+.impressum:hover, .instructions:hover{
+    color: black;
+}
+
+.space-between {
+    padding: 20px;
+}
+
+#start-btn {
+    position: absolute;
+    top: 50px;
+    left: 380px;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Navigation Bar CSS */
+
+.navigation-bar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navigation-bar button {
+    padding: 10px 15px;
+    color: black;
+    font-size: 16px;
+    background-color: rgb(242, 197, 100);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* canvas CSS*/
+
+canvas {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 72px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #92290c;
+}
+
+
+/*Impressum/Instructions css*/
+
+.headline-imp-instr-wrapper {
+    margin-top: 60px;
+    font-size: 72px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #92290c;
+    margin-bottom: 10px;
+}
+
+.impressum-wrapper,
+.instructions-wrapper {
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    height: 100vh;
+}
+
+span {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: #92290c;
+}
+
+h4 {
+    color: #92290c;
+    font-size: 32px;
+}
+
+/*rotate warning css*/
+
+.rotate-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(228, 181, 119);
+    color: #92290c;
+    font-size: 24px;
+    width: 100%;
+    z-index: 20;
+    flex-direction: column;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+/* gameOver Menu*/
+
+#gameOverMenu {
+    background-image: url('img/9_intro_outro_screens/game_over/oh no you lost!.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 25;
+}
+
+#gameOverMenu button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f6ad4e;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #f6ad4e;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#gameOverMenu button:hover {
+    background-color: #ff5722;
+}
+
+/* win screen*/
+#win-screen {
+    background-image: url('img/9_intro_outro_screens/win/win_2.png');
+    background-position: top;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 25;
+}
+
+#win-screen button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f6ad4e;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #f6ad4e;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#win-screen button:hover {
+    background-color: #ff5722;
+}
+
+/* Media Querry*/
+
+@media only screen and (max-width: 720px) {
+
+    canvas {
+        width: 100%;
+        border-radius: 0%;
+    }
+
+    #content-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .start-screen {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .navigation-bar {
+        width: 100%;
+        opacity: 100;
+    }
+}
+
+@media (max-width: 650px) {
+    canvas {
+        display: none;
+    }
+}
+
+@media (max-width:466px) {
+    #start-btn {
+        left:50px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    canvas {
+        height: 100%;
+        width: 100%;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .start-screen {
+        width: 100%;
+        height: 100vh;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .navigation-bar {
+        bottom: 0;
+        opacity: 100;
+    }
+
+    #content-wrapper {
+        height: 100vh;
+        width: 100%;
+    }
+
+}
