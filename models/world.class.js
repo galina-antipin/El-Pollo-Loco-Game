@@ -142,11 +142,7 @@ class World {
       this.character.hit();
       this.statusBar.setPercentage(this.character.energy);
     } else {
-      const isCharacterLandingOnEnemy =
-        this.character.y + this.character.height >= enemy.y &&
-        this.character.y + this.character.height <= enemy.y + enemy.height;
-
-      if (isCharacterLandingOnEnemy) {
+      if (this.character.isColliding(enemy) && this.character.isAboveGround() && this.character.speedY < 0){
         this.small_chicken_dead.play();
         enemy.changeToDeadImage();
         this.character.jump();
