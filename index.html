@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>El Pollo Loco</title>
     <script src="models/drawable-object.class.js"></script>
     <script src="models/movable-object.class.js"></script>
@@ -27,52 +26,69 @@
     <script src="models/endboss.class.js"></script>
     <script src="levels/level1.js"></script>
     <script src="js/game.js"></script>
-    <link rel="icon" type="image/png" href="./img/cactus.png">
-</head>
+    <link rel="icon" type="image/png" href="./img/cactus.png" />
+  </head>
 
-<body> 
-    <div class="rotate-warning" id="rotate-warning">Turn your Device to play</div>
+  <body>
+    <div class="rotate-warning" id="rotate-warning">
+      Turn your Device to play
+    </div>
     <h1>El Pollo Loco</h1>
 
     <div id="content-wrapper">
-       
-        <div id="start-screen" class="start-screen">
-            <button id="start-btn" onclick="startGame()">Start Game</button>
+      <div id="start-screen" class="start-screen">
+        <button id="start-btn" onclick="startGame()">Start Game</button>
+      </div>
+
+      <footer id="footer">
+        <span class="instructions">
+          <a href="instructions.html">Instructions </a>
+        </span>
+        <div class="space-between"></div>
+        <span class="impressum"><a href="impressum.html">Impressum </a></span>
+      </footer>
+
+      <audio id="game-sound" src="./audio/taratata.mp3" preload="auto"></audio>
+      <canvas
+        id="canvas"
+        width="720"
+        height="480"
+        style="display: none"
+      ></canvas>
+
+      <div id="gameOverMenu" class="d-none">
+        <a href="index.html">
+          <button id="mainMenuButton">Back to Startscreen</button></a
+        >
+      </div>
+      <div id="win-screen" class="d-none">
+        <a href="index.html">
+          <button id="mainMenuButton">Back to Startscreen</button></a
+        >
+      </div>
+      <div class="navigation-bar d-none" id="nav-bar">
+        <div class="nav-arrows opacity">
+          <button id="left-arrow">&lt;</button>
+          <button id="right-arrow">&gt;</button>
+        </div>
+        <div class="btn-overlay">
+          <img
+            src="./img/sound-on.svg"
+            alt="sound on"
+            id="mute-btn"
+            class="mute-button"
+            onclick="muteSound()"
+          />
+          <a href="index.html"
+            ><img src="./img/home-btn.svg" alt="home button" id="home-btn"
+          /></a>
         </div>
 
-        <footer id="footer">
-            <span class="instructions"> <a href="instructions.html">Instructions
-                </a> </span>
-            <div class="space-between"></div>
-            <span class="impressum"><a href="impressum.html">Impressum </a></span>
-        </footer>
-
-        <audio id="game-sound" src="./audio/taratata.mp3" preload="auto"></audio>
-        <canvas id="canvas" width="720" height="480" style="display:none;"></canvas>
-
-        <div id="gameOverMenu" class="d-none">
-            <a href="index.html">
-                <button id="mainMenuButton">Back to Startscreen</button></a>
+        <div class="nav-controls">
+          <button id="jump-button">Jump</button>
+          <button id="throw-button">Throw</button>
         </div>
-        <div id="win-screen" class="d-none">
-            <a href="index.html">
-                <button id="mainMenuButton">Back to Startscreen</button></a>
-        </div>
-        <div class="navigation-bar d-none" id="nav-bar">
-            <div class="nav-arrows opacity">
-                <button id="left-arrow">&lt; </button>
-                <button id="right-arrow">&gt;</button>
-            </div>
-   <div class="btn-overlay"><img src="./img/sound-on.svg" alt="sound on" id="mute-btn"
-                class="mute-button" onclick="muteSound()">
-            <a href="index.html"><img src="./img/home-btn.svg" alt="home button" id="home-btn"></a></div>
-    
-            <div class="nav-controls">
-                <button id="jump-button">Jump</button>
-                <button id="throw-button">Throw</button>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
