@@ -34,8 +34,8 @@ a {
     display: none !important;
 }
 
-.opacity-none {
-    opacity: 0;
+.opacity {
+    opacity: 0 !important;
 }
 
 /* mute and home btn overlay*/
@@ -293,6 +293,12 @@ h4 {
 }
 
 /* Media Querry*/
+
+@media (max-width: 1028px ) {
+    .opacity {
+        opacity: 100 !important;
+    }
+}
 
 @media only screen and (max-width: 720px) {
 
