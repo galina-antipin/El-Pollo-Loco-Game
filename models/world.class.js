@@ -142,7 +142,11 @@ class World {
       this.character.hit();
       this.statusBar.setPercentage(this.character.energy);
     } else {
-      if (this.character.isColliding(enemy) && this.character.isAboveGround() && this.character.speedY < 0){
+      if (
+        this.character.isColliding(enemy) &&
+        this.character.isAboveGround() &&
+        this.character.speedY < 0
+      ) {
         this.small_chicken_dead.play();
         enemy.changeToDeadImage();
         this.character.jump();
@@ -234,8 +238,8 @@ class World {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.ctx.translate(this.camera_x, 0);
     this.addObjectsToMap(this.level.backgroundObjects);
-    this.ctx.translate(-this.camera_x, 0);
     this.addObjectsToMap(this.level.clouds);
+    this.ctx.translate(-this.camera_x, 0);
     this.addToMap(this.statusBar);
     this.addToMap(this.coinsStatusBar);
     this.addToMap(this.bottlesStatusBar);
