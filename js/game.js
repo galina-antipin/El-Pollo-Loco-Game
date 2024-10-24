@@ -248,9 +248,9 @@ function muteSound() {
 
     const muteButton = document.getElementById('mute-btn');
     if (soundsMuted) {
-        muteButton.src = './img/sound-off.svg';
+        muteButton.src = './img/sound-off.png';
     } else {
-        muteButton.src = './img/sound-on.svg';
+        muteButton.src = './img/sound-on.png';
         world.unmuteAllSounds();
     }
 }

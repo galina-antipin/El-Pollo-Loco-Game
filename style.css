@@ -58,16 +58,11 @@ a {
 /* mute and home btn overlay*/
 .btn-overlay {
     display: flex;
-    align-items: center;
-}
-
-.btn-overlay img:hover {
-    filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(632%) hue-rotate(353deg) brightness(74%) contrast(88%);
 }
 
 #mute-btn {
-    height: 25px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     margin-right: 5px;
     cursor: pointer;
 }
