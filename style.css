@@ -101,8 +101,8 @@ footer {
 
 #start-btn {
     position: absolute;
-    top: 50px;
-    left: 380px;
+    top: 50px; 
+    left: 50%;
     padding: 10px 20px;
     font-size: 24px;
     color: white;
@@ -294,7 +294,7 @@ h4 {
 
 /* Media Querry*/
 
-@media (max-width: 1028px ) {
+@media (max-width: 1400px ) {
     .opacity {
         opacity: 100 !important;
     }

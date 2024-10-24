@@ -3,7 +3,7 @@
  * @extends {MovableObject}
  */
 class Character extends MovableObject {
-  height = 250;
+  height = 240;
   y = 70;
   speed = 10;
   isWalking = false;
