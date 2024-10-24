@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>El Pollo Loco</title>
-    <script src="models/drawable-object.class.js"></script>
-    <script src="models/movable-object.class.js"></script>
-    <script src="models/character.class.js"></script>
-    <script src="models/coins.class.js"></script>
-    <script src="models/bottles.class.js"></script>
-    <script src="models/chicken.class.js"></script>
-    <script src="models/chicken-small.class.js"></script>
-    <script src="models/level.class.js"></script>
-    <script src="models/status-bar.class.js"></script>
-    <script src="models/coins-statusbar.class.js"></script>
-    <script src="models/statusbar-bottles.js"></script>
-    <script src="models/endboss-statusbar.class.js"></script>
-    <script src="models/cloud.class.js"></script>
-    <script src="models/world.class.js"></script>
-    <script src="models/background-object.class.js"></script>
-    <script src="models/keyboard.class.js"></script>
 
-    <script src="models/throwable-object.class.js"></script>
-    <script src="models/endboss.class.js"></script>
-    <script src="levels/level1.js"></script>
-    <script src="js/game.js"></script>
-    <link rel="icon" type="image/png" href="./img/cactus.png" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>El Pollo Loco</title>
+  <script src="models/drawable-object.class.js"></script>
+  <script src="models/movable-object.class.js"></script>
+  <script src="models/character.class.js"></script>
+  <script src="models/coins.class.js"></script>
+  <script src="models/bottles.class.js"></script>
+  <script src="models/chicken.class.js"></script>
+  <script src="models/chicken-small.class.js"></script>
+  <script src="models/level.class.js"></script>
+  <script src="models/status-bar.class.js"></script>
+  <script src="models/coins-statusbar.class.js"></script>
+  <script src="models/statusbar-bottles.js"></script>
+  <script src="models/endboss-statusbar.class.js"></script>
+  <script src="models/cloud.class.js"></script>
+  <script src="models/world.class.js"></script>
+  <script src="models/background-object.class.js"></script>
+  <script src="models/keyboard.class.js"></script>
 
-  <body>
-    <div class="rotate-warning" id="rotate-warning">
-      Turn your Device to play
+  <script src="models/throwable-object.class.js"></script>
+  <script src="models/endboss.class.js"></script>
+  <script src="levels/level1.js"></script>
+  <script src="js/game.js"></script>
+  <link rel="icon" type="image/png" href="./img/cactus.png" />
+</head>
+
+<body>
+  <div class="rotate-warning" id="rotate-warning">
+    Turn your Device to play
+  </div>
+  <h1>El Pollo Loco</h1>
+
+  <div id="content-wrapper">
+    <div id="start-screen" class="start-screen">
+      <button id="start-btn" onclick="startGame()">Start Game</button>
     </div>
-    <h1>El Pollo Loco</h1>
 
-    <div id="content-wrapper">
-      <div id="start-screen" class="start-screen">
-        <button id="start-btn" onclick="startGame()">Start Game</button>
+    <footer id="footer">
+      <span class="instructions">
+        <a href="instructions.html">Instructions </a>
+      </span>
+      <div class="space-between"></div>
+      <span class="impressum"><a href="impressum.html">Impressum </a></span>
+    </footer>
+
+    <audio id="game-sound" src="./audio/taratata.mp3" preload="auto"></audio>
+    <canvas id="canvas" width="720" height="480" style="display: none"></canvas>
+
+    <div id="gameOverMenu" class="d-none">
+      <a href="index.html">
+        <button id="mainMenuButton">Back to Startscreen</button></a>
+    </div>
+    <div id="win-screen" class="d-none">
+      <a href="index.html">
+        <button id="mainMenuButton">Back to Startscreen</button></a>
+    </div>
+    <div class="navigation-bar d-none" id="nav-bar">
+      <div class="nav-arrows opacity">
+        <img id="left-arrow" src="./img/arrow-left.png" alt="Arrow left button">
+        <img id="right-arrow" src="./img/arrow-right.png" alt="Arrow right button">
       </div>
-
-      <footer id="footer">
-        <span class="instructions">
-          <a href="instructions.html">Instructions </a>
-        </span>
-        <div class="space-between"></div>
-        <span class="impressum"><a href="impressum.html">Impressum </a></span>
-      </footer>
-
-      <audio id="game-sound" src="./audio/taratata.mp3" preload="auto"></audio>
-      <canvas
-        id="canvas"
-        width="720"
-        height="480"
-        style="display: none"
-      ></canvas>
-
-      <div id="gameOverMenu" class="d-none">
-        <a href="index.html">
-          <button id="mainMenuButton">Back to Startscreen</button></a
-        >
+      <div class="btn-overlay">
+        <img src="./img/sound-on.png" alt="sound on" id="mute-btn" class="mute-button" onclick="muteSound()" />
+        <a href="index.html"><img src="./img/home-btn.png" alt="home button" id="home-btn" /></a>
       </div>
-      <div id="win-screen" class="d-none">
-        <a href="index.html">
-          <button id="mainMenuButton">Back to Startscreen</button></a
-        >
-      </div>
-      <div class="navigation-bar d-none" id="nav-bar">
-        <div class="nav-arrows opacity">
-          <button id="left-arrow">&lt;</button>
-          <button id="right-arrow">&gt;</button>
-        </div>
-        <div class="btn-overlay">
-          <img
-            src="./img/sound-on.png"
-            alt="sound on"
-            id="mute-btn"
-            class="mute-button"
-            onclick="muteSound()"
-          />
-          <a href="index.html"
-            ><img src="./img/home-btn.png" alt="home button" id="home-btn"
-          /></a>
-        </div>
-
-        <div class="nav-controls opacity">
-          <button id="jump-button">Jump</button>
-          <button id="throw-button">Throw</button>
-        </div>
+      <div class="nav-controls opacity">
+        <img id="jump-button" src="./img/jump.png" alt="Jump button">
+        <img id="throw-button" src="./img/throw.png" alt="Throw button">
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

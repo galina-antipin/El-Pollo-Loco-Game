@@ -149,16 +149,17 @@ footer {
     z-index: 2;
     width: 100%;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
-.navigation-bar button {
-    padding: 10px 15px;
-    color: black;
-    font-size: 16px;
-    background-color: rgb(242, 197, 100);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+.nav-controls img {
+    width: 55px;
+    margin-right: 16px;
+}
+
+.nav-arrows img {
+    width: 55px;
+    margin-left: 16px;
 }
 
 /* canvas CSS*/
