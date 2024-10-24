@@ -219,20 +219,43 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(228, 181, 119);
-    color: #661d09;
-    font-size: 24px;
-    width: 100%;
-    z-index: 20;
-    flex-direction: column;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 20;
+    flex-direction: column;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
     opacity: 0;
+}
+
+.rotate-warning::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px; 
+    height: 150px;
+    background-image: url(./img/rotate-device-icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) scale(1); 
+    animation: pulse-twist 1.5s infinite; 
+
+}
+
+@keyframes pulse-twist {
+    0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1) rotate(-10deg); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+    }
 }
 
 /* gameOver Menu*/
