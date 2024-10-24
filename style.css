@@ -141,7 +141,6 @@ footer {
 }
 
 /* Navigation Bar CSS */
-
 .navigation-bar {
     display: flex;
     position: absolute;
@@ -163,7 +162,6 @@ footer {
 }
 
 /* canvas CSS*/
-
 canvas {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -181,7 +179,6 @@ h1 {
 
 
 /*Impressum/Instructions css*/
-
 .headline-imp-instr-wrapper {
     margin-top: 60px;
     font-size: 72px;
@@ -218,13 +215,12 @@ h4 {
 }
 
 /*rotate warning css*/
-
 .rotate-warning {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(228, 181, 119);
-    color: #92290c;
+    color: #661d09;
     font-size: 24px;
     width: 100%;
     z-index: 20;
@@ -240,7 +236,6 @@ h4 {
 }
 
 /* gameOver Menu*/
-
 #gameOverMenu {
     background-image: url('img/9_intro_outro_screens/game_over/oh no you lost!.png');
     background-position: top;
@@ -307,14 +302,13 @@ h4 {
 }
 
 /* Media Querry*/
-
 @media (max-width: 1400px ) {
     .opacity {
         opacity: 100 !important;
     }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 719px) {
 
     canvas {
         width: 100%;
@@ -334,6 +328,10 @@ h4 {
     .navigation-bar {
         width: 100%;
         opacity: 100;
+    }
+
+    .instructions, .space-between {
+        display: none;
     }
 }
 
