@@ -181,7 +181,6 @@ h1 {
     color: #92290c;
 }
 
-
 /*Impressum/Instructions css*/
 .headline-imp-instr-wrapper {
     margin-top: 60px;
@@ -347,7 +346,6 @@ h4 {
 }
 
 @media only screen and (max-width: 719px) {
-
     canvas {
         width: 100%;
         border-radius: 0%;
