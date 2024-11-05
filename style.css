@@ -85,6 +85,10 @@ a {
     background-size: cover;
 }
 
+.fullscreen-btn {
+    width: 50px;
+}
+
 footer {
     position: absolute;
     bottom: 0;

@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
  * 
  * @param {TouchEvent} event - The touch event triggered by the touch interaction.
  */
-    leftArrow.addEventListener('touchstart',  (event) => {
+    leftArrow.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.LEFT = true;
     });
@@ -149,78 +149,78 @@ document.addEventListener('DOMContentLoaded', (event) => {
         keyboard.RIGHT = false;
     });
 
-/**
-  * Executes the jump function when the jump button is touched.
-  * 
-  * @param {TouchEvent} event - The touch event triggered by the touch interaction.
-  */
+    /**
+      * Executes the jump function when the jump button is touched.
+      * 
+      * @param {TouchEvent} event - The touch event triggered by the touch interaction.
+      */
     jumpButton.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.SPACE = true;
     });
 
-/**
- * (Currently empty) Handles the end of the jump when the jump button is released.
- * 
- * @param {TouchEvent} event - The touch event triggered by the touch interaction.
- */
+    /**
+     * (Currently empty) Handles the end of the jump when the jump button is released.
+     * 
+     * @param {TouchEvent} event - The touch event triggered by the touch interaction.
+     */
     jumpButton.addEventListener('touchend', (event) => {
         event.preventDefault();
         keyboard.SPACE = false;
     });
 
-/**
- * Executes the throw function when the throw button is touched.
- * 
- * @param {TouchEvent} event - The touch event triggered by the touch interaction.
- */
+    /**
+     * Executes the throw function when the throw button is touched.
+     * 
+     * @param {TouchEvent} event - The touch event triggered by the touch interaction.
+     */
     throwButton.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.D = true;
     });
 
-/**
- * (Currently empty) Handles the end of the throw when the throw button is released.
- * 
- * @param {TouchEvent} event - The touch event triggered by the touch interaction.
- */
+    /**
+     * (Currently empty) Handles the end of the throw when the throw button is released.
+     * 
+     * @param {TouchEvent} event - The touch event triggered by the touch interaction.
+     */
     throwButton.addEventListener('touchend', (event) => {
         keyboard.D = false;
     });
 
-        // Maus-Events
-        leftArrow.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            keyboard.LEFT = true;
-        });
-        leftArrow.addEventListener('mouseup', (event) => {
-            keyboard.LEFT = false;
-        });
-    
-        rightArrow.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            keyboard.RIGHT = true;
-        });
-        rightArrow.addEventListener('mouseup', (event) => {
-            keyboard.RIGHT = false;
-        });
-    
-        jumpButton.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            keyboard.SPACE = true;
-        });
-        jumpButton.addEventListener('mouseup', (event) => {
-            keyboard.SPACE = false;
-        });
-    
-        throwButton.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            keyboard.D = true;
-        });
-        throwButton.addEventListener('mouseup', (event) => {
-            keyboard.D = false;
-        });
+    // Maus-Events
+    leftArrow.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        keyboard.LEFT = true;
     });
+    leftArrow.addEventListener('mouseup', (event) => {
+        keyboard.LEFT = false;
+    });
+
+    rightArrow.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        keyboard.RIGHT = true;
+    });
+    rightArrow.addEventListener('mouseup', (event) => {
+        keyboard.RIGHT = false;
+    });
+
+    jumpButton.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        keyboard.SPACE = true;
+    });
+    jumpButton.addEventListener('mouseup', (event) => {
+        keyboard.SPACE = false;
+    });
+
+    throwButton.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        keyboard.D = true;
+    });
+    throwButton.addEventListener('mouseup', (event) => {
+        keyboard.D = false;
+    });
+});
 
 /**
  * Stops the character from moving left or right by setting the corresponding keys to false.
@@ -268,8 +268,36 @@ function checkOrientation() {
     } else {
         rotateWarning.style.opacity = 0;
         startScreen.classList.remove('d-none');
-    }
-}
+    }}
 
 window.addEventListener('resize', checkOrientation);
-window.addEventListener('load', checkOrientation); 
+window.addEventListener('load', checkOrientation);     
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement &&    
+        !document.webkitFullscreenElement && // Safari
+        !document.mozFullScreenElement &&    // Firefox
+        !document.msFullscreenElement) {     // IE/Edge
+  
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullscreen) { // Safari
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+        document.documentElement.msRequestFullscreen();
+      }
+  
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { // Safari
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+    }
+}  
