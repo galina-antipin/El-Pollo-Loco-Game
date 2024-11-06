@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     leftArrow.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.LEFT = true;
-    });
+    }, { passive: false });
 
     /**
   * Stops moving left when the left arrow button is released.
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     rightArrow.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.RIGHT = true;
-    });
+    }, { passive: false });
 
     /**
     * Stops moving right when the right arrow button is released.
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     jumpButton.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.SPACE = true;
-    });
+    }, { passive: false });
 
     /**
      * (Currently empty) Handles the end of the jump when the jump button is released.
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     throwButton.addEventListener('touchstart', (event) => {
         event.preventDefault();
         keyboard.D = true;
-    });
+    }, { passive: false });
 
     /**
      * (Currently empty) Handles the end of the throw when the throw button is released.
@@ -243,7 +243,6 @@ function muteSound() {
     audioElements.forEach(audio => {
         audio.muted = soundsMuted;
         world.muteAllSounds();
-
     });
 
     const muteButton = document.getElementById('mute-btn');
@@ -273,6 +272,9 @@ function checkOrientation() {
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('load', checkOrientation);     
 
+/**
+ * Toggles the button to show a fullscreen 
+ */
 function toggleFullScreen() {
     if (!document.fullscreenElement &&    
         !document.webkitFullscreenElement && // Safari
