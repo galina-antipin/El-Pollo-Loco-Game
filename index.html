@@ -38,7 +38,7 @@
   <div id="content-wrapper">
     <div id="start-screen" class="start-screen">
       <button id="start-btn" onclick="startGame()">Start Game</button>
-      <img class="fullscreen-btn" src="./img/info.png" alt="Fullscreen Button" onclick="toggleFullScreen()">
+      <img class="fullscreen-btn" src="./img/fullscreen-icon.svg" alt="Fullscreen Button" onclick="toggleFullScreen()">
     </div>
 
     <footer id="footer">
@@ -50,7 +50,8 @@
     </footer>
 
     <audio id="game-sound" src="./audio/taratata.mp3" preload="auto"></audio>
-    <canvas id="canvas" width="720" height="480" style="display: none"></canvas>
+    <canvas id="canvas" width="720" height="480" style="display: none">
+    </canvas>
 
     <div id="gameOverMenu" class="d-none">
       <a href="index.html">
@@ -68,6 +69,7 @@
       <div class="btn-overlay">
         <img src="./img/sound-on.png" alt="sound on" id="mute-btn" class="mute-button" onclick="muteSound()" />
         <a href="index.html"><img src="./img/home-btn.png" alt="home button" id="home-btn" /></a>
+        <img class="canvas-fullscreen-btn" src="./img/fullscreen-icon.svg" alt="Fullscreen Button" onclick="toggleFullScreen()">
       </div>
       <div class="nav-controls opacity">
         <img id="jump-button" src="./img/jump.png" alt="Jump button">

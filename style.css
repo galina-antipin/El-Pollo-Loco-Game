@@ -87,6 +87,8 @@ a {
 
 .fullscreen-btn {
     width: 50px;
+    position: absolute;
+    right: 5px;
 }
 
 footer {
@@ -179,6 +181,12 @@ h1 {
     letter-spacing: 3px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     color: #92290c;
+}
+
+.canvas-fullscreen-btn {
+    width: 30px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 /*Impressum/Instructions css*/
