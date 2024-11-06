@@ -106,6 +106,9 @@ window.addEventListener('keyup', (e) => {
  * @listens DOMContentLoaded
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+    });
     const leftArrow = document.getElementById('left-arrow');
     const rightArrow = document.getElementById('right-arrow');
     const jumpButton = document.getElementById('jump-button');
@@ -303,3 +306,4 @@ function toggleFullScreen() {
       }
     }
 }  
+
